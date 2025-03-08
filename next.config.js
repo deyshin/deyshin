@@ -3,7 +3,7 @@ const nextConfig = {
   output: "export",  // enables static exports
   reactStrictMode: true,
   distDir: 'out',
-  basePath: '/deyshin', // for GitHub Pages deployment
+  basePath: process.env.NODE_ENV === 'production' ? '/deyshin' : '', // Only use basePath in production
   images: {
     unoptimized: true, // disable image optimization for static export
   },
